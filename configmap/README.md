@@ -27,6 +27,48 @@ By default, CIS only process AS3 ConfigMaps and Services in the same namespace, 
 
 ---
 
+## Instructions
+
+### Hub Mode - single tenant
+Setup
+```
+oc apply -f cis_hubmode_deploy.yaml
+oc apply -f demo/hubmode/
+```
+
+Test
+```
+curl http://multi.example.com/f5
+curl http://multi.example.com/nginx
+```
+
+Clean up
+```
+oc delete -f cis_hubmode_deploy.yaml
+oc delete -f demo/hubmode/
+```
+
+### Hub Mode - multi tenant
+Setup
+```
+oc apply -f cis_hubmode_deploy.yaml
+oc apply -f demo/hubmode-multi-tenant/
+```
+
+Test
+```
+curl http://multi.example.com/f5
+curl http://multi.example.com/nginx
+```
+
+Clean up
+```
+oc delete -f cis_hubmode_deploy.yaml
+oc delete -f demo/hubmode-multi-tenant/
+```
+
+---
+
 ## Troubleshoot
 
 ### CIS not processing Custom Resources

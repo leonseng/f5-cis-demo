@@ -11,6 +11,28 @@ Enabling [Custom Resource mode](https://clouddocs.f5.com/containers/latest/userg
 
 ---
 
+## Instructions
+
+Setup
+```
+oc apply -f cis_crmode_deploy.yaml
+oc apply -f demo/
+```
+
+Test
+```
+curl http://multi.example.com/f5
+curl http://multi.example.com/nginx
+```
+
+Clean up
+```
+oc delete -f cis_crmode_deploy.yaml
+oc delete -f demo/
+```
+
+---
+
 ## Troubleshoot
 
 ### CIS not processing Custom Resources

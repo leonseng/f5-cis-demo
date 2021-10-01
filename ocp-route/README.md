@@ -5,8 +5,22 @@ CIS configures a pair of virtual servers on BIG-IP (port 80 and 443) in the CIS 
 The virtual servers defined can be customized further using the Override AS3 ConfigMap.
 
 ---
-## Test
 
+## Instructions
+
+Setup
+```
+oc apply -f cis_deploy.yaml
+oc apply -f demo/
+```
+
+Test
 ```
 while true; do curl -s mysite.f5demo.com/txt | grep "Server IP"; sleep 1; done
+```
+
+Clean up
+```
+oc delete -f cis_deploy.yaml
+oc delete -f demo/
 ```
