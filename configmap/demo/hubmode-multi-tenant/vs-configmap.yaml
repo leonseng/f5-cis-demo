@@ -26,7 +26,7 @@ data:
                         "class": "Service_HTTP",
                         "remark": "n1 namespace",
                         "virtualAddresses": [
-                            "10.192.75.101"
+                            "10.1.10.51"
                         ],
                         "pool": "web_pool_n1",
                         "iRules": [
@@ -83,7 +83,7 @@ data:
                         "class": "Service_HTTP",
                         "remark": "n2 namespace",
                         "virtualAddresses": [
-                            "10.192.75.102"
+                            "10.1.10.52"
                         ],
                         "pool": "web_pool_n2"
                     },
