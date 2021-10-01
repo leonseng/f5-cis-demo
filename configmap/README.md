@@ -24,3 +24,23 @@ By default, CIS only process AS3 ConfigMaps and Services in the same namespace, 
 - `--namespace-label` only determines which namespace the AS3 ConfigMaps should be in. Namespaces where the applications and Services are located do not require the label, as CIS will have cluster wide privileges (unless restricted otherwise with RoleBindings) to discover the Services and their endpoints
 - Once a pool has been assigned to a Service, a new Service using same label will not its endpoint added to the pool. In Hub Mode, there is a risk of one application team using another team's label, "hijacking" the other team's pool on BIG-IP.
 - As AS3 is scoped by tenant/partition, each tenant should have its own AS3 configmap, containing all application/virtual server definitions in it. Splitting a tenant into multiple ConfigMaps (one for each application in the tenant) will cause the last ConfigMap to take effect, removing configurations of all other applications.
+
+---
+
+## Troubleshoot
+
+### CIS not processing Custom Resources
+
+Check to ensure CIS is configured to monitor the namespace in which the Custom Resources are defined. If `--namespace-label` is specified, ensure the namespace is labelled appropriately
+
+```
+kubectl label namespace <namespace> <key>=<value>
+```
+
+### Demo pods crashing
+
+When deploying the demo in non-default namespace, the pods may fail to run due to OCP's Security Context Constraints (SCC). If so, add the serviceAccount in the namespace to the `anyuid` SCC.
+
+```
+oc adm policy add-scc-to-user anyuid system:serviceaccount:<namespace>:<serviceAccount>
+```

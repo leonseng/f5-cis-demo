@@ -8,3 +8,15 @@ Enabling Custom Resource mode replaces the other modes, i.e. CIS will not proces
 
 **Cons**
 - VirtualServer CR is not very customizable, e.g. can't attach iRule as of 2.5.1
+
+---
+
+## Troubleshoot
+
+### CIS not processing Custom Resources
+
+Check to ensure CIS is configured to monitor the namespace in which the Custom Resources are defined. If `--namespace-label` is specified, ensure the namespace is labelled appropriately
+
+```
+kubectl label namespace <namespace> <key>=<value>
+```
