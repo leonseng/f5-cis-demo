@@ -1,6 +1,6 @@
 # Custom Resource mode
 
-Enabling Custom Resource mode replaces the other modes, i.e. CIS will not process Ingress/Routes/ConfigMaps.
+Enabling [Custom Resource mode](https://clouddocs.f5.com/containers/latest/userguide/crd/) replaces the other modes, i.e. CIS will not process Ingress/Routes/ConfigMaps.
 
 **Pros**
 - Using CR mode allows better access control of BIG-IP configuration, as definition of the custom resources can be restricted to cluster admins only.
