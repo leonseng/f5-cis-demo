@@ -38,8 +38,8 @@ oc apply -f demo/hubmode/
 
 Test
 ```
-curl http://multi.example.com/f5
-curl http://multi.example.com/nginx
+curl http://10.1.10.51
+curl http://10.1.10.52
 ```
 
 Clean up
@@ -57,8 +57,8 @@ oc apply -f demo/hubmode-multi-tenant/
 
 Test
 ```
-curl http://multi.example.com/f5
-curl http://multi.example.com/nginx
+curl http://10.1.10.51
+curl http://10.1.10.52
 ```
 
 Clean up
