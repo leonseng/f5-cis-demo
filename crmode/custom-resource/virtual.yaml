@@ -8,11 +8,11 @@ spec:
   virtualServerAddress: "10.1.10.120"
   host: multi.example.com
   pools:
-  - path: /n2
-    service: f5-hello-world-n2
-    servicePort: 8080
+  - path: /nginx
+    service: nginx
+    servicePort: 80
     rewrite: /
-  - path: /n1
-    service: f5-hello-world-n1
+  - path: /f5
+    service: f5-hello-world
     servicePort: 8080
     rewrite: /
