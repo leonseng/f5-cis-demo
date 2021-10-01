@@ -26,7 +26,7 @@ data:
                         "class": "Service_HTTP",
                         "remark": "n1 namespace",
                         "virtualAddresses": [
-                            "10.1.100.51"
+                            "10.1.10.51"
                         ],
                         "pool": "web_pool_n1"
                     },
@@ -50,7 +50,7 @@ data:
                         "class": "Service_HTTP",
                         "remark": "n2 namespace",
                         "virtualAddresses": [
-                            "10.1.100.52"
+                            "10.1.10.52"
                         ],
                         "pool": "web_pool_n2"
                     },
