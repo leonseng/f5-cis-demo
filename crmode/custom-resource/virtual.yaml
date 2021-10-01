@@ -1,0 +1,18 @@
+apiVersion: "cis.f5.com/v1"
+kind: VirtualServer
+metadata:
+  name: multipath-virtual-server
+  labels:
+    f5cr: "true"
+spec:
+  virtualServerAddress: "10.1.10.120"
+  host: multi.example.com
+  pools:
+  - path: /n2
+    service: f5-hello-world-n2
+    servicePort: 8080
+    rewrite: /
+  - path: /n1
+    service: f5-hello-world-n1
+    servicePort: 8080
+    rewrite: /

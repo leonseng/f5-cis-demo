@@ -1,17 +1,17 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: k8s-bigip-ctlr-deployment-hubmode
+  name: k8s-bigip-ctlr-deployment
   namespace: kube-system
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: k8s-bigip-ctlr-deployment-hubmode
+      app: k8s-bigip-ctlr-deployment
   template:
     metadata:
       labels:
-        app: k8s-bigip-ctlr-deployment-hubmode
+        app: k8s-bigip-ctlr-deployment
     spec:
       # Name of the Service Account bound to a Cluster Role with the required
       # permissions
@@ -43,7 +43,8 @@ spec:
             "--log-level=DEBUG",
             "--log-as3-response=true",
             "--openshift-sdn-name=/Common/openshift_vxlan",
-            "--namespace-label=use_cis=true",
-            "--hubmode=true"
+            "--manage-routes=true",
+            "--route-vserver-addr=10.1.10.100",
+            "--override-as3-declaration=default/f5-as3-override"
             ]
       serviceAccountName: bigip-ctlr

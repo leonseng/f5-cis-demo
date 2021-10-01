@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: f5-hello-world-n2
+  labels:
+    app: f5-hello-world-n2
+spec:
+  ports:
+  - name: f5-hello-world
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  type: ClusterIP
+  selector:
+    app: f5-hello-world-n2

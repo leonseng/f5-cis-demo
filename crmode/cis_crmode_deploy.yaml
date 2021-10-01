@@ -40,13 +40,10 @@ spec:
             "--bigip-partition=OpenShift",
             "--pool-member-type=cluster",
             "--insecure=true",
-            "--manage-routes=true",
             "--log-level=DEBUG",
             "--log-as3-response=true",
-            "--route-vserver-addr=10.1.10.100",
             "--openshift-sdn-name=/Common/openshift_vxlan",
-            "--override-as3-declaration=default/f5-as3-override",
-            "--hubmode=true",
-            "--namespace-label=use_cis=true"
+            "--namespace-label=use_cis=true",
+            "--custom-resource-mode=true"
             ]
       serviceAccountName: bigip-ctlr
