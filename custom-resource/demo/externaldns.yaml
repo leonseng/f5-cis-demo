@@ -15,7 +15,7 @@ spec:
     dataServerName: /Common/bigip-10-1-1-5
     monitor:
       type: http
-      send: "GET /"
+      send: "GET / HTTP/1.1\r\nHost: crmode.example.com\r\n"
       recv: ""
       interval: 10
       timeout: 10
