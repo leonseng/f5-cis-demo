@@ -44,6 +44,7 @@ spec:
             "--log-as3-response=true",
             "--openshift-sdn-name=/Common/openshift_vxlan",
             "--namespace-label=use_cis=true",
-            "--custom-resource-mode=true"
+            "--custom-resource-mode=true",
+            "--ipam=true"
             ]
       serviceAccountName: bigip-ctlr
