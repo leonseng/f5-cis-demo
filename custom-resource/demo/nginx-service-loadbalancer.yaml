@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    cis.f5.com/ipamLabel: Default
+    cis.f5.com/health: '{"interval": 10, "timeout": 31}'
+  labels:
+    app: nginx
+  name: nginx-lb
+spec:
+  ports:
+    - name: svc-lb1-80
+      port: 80
+      protocol: TCP
+      targetPort: 80
+  selector:
+    app: nginx
+  type: LoadBalancer
