@@ -17,7 +17,7 @@ data:
             "id": "urn:uuid:33045210",
             "label": "http",
             "remark": "A1 Template",
-            "A1": {
+            "Tenant1": {
                 "class": "Tenant",
                 "A1": {
                     "class": "Application",
@@ -74,7 +74,7 @@ data:
             "id": "urn:uuid:33045210",
             "label": "http",
             "remark": "A1 Template",
-            "A2": {
+            "Tenant2": {
                 "class": "Tenant",
                 "A2": {
                     "class": "Application",

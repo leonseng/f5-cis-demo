@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: f5-hello-world-n1
+  name: f5-hello-world-multi-tenant-n1
   namespace: n1
   labels:
-    app: f5-hello-world
-    cis.f5.com/as3-tenant: A1
+    app: f5-hello-world-multi-tenant-n1
+    cis.f5.com/as3-tenant: Tenant1
     cis.f5.com/as3-app: A1
     cis.f5.com/as3-pool: web_pool_n1
 spec:
@@ -16,4 +16,4 @@ spec:
     targetPort: 8080
   type: ClusterIP
   selector:
-    app: f5-hello-world
+    app: f5-hello-world-multi-tenant-n1
