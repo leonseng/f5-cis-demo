@@ -21,8 +21,8 @@ oc apply -f demo/
 
 Test
 ```
-curl http://multi.example.com/f5
-curl http://multi.example.com/nginx
+curl http://multipath.example.com/f5
+curl http://multipath.example.com/nginx
 ```
 
 Clean up

@@ -5,17 +5,17 @@ metadata:
   labels:
     f5cr: "true"
 spec:
-  domainName: crmode.example.com
+  domainName: ipam.example.com
   dnsRecordType: A
   loadBalanceMethod: round-robin
   pools:
-  - name: crmode.example.com
+  - name: ipam.example.com
     dnsRecordType: A
     loadBalanceMethod: round-robin
     dataServerName: /Common/bigip-10-1-1-5
     monitor:
       type: http
-      send: "GET / HTTP/1.1\r\nHost: crmode.example.com\r\n"
+      send: "GET / HTTP/1.1\r\nHost: ipam.example.com\r\n"
       recv: ""
       interval: 10
       timeout: 10
