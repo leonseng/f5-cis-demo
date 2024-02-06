@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cis-extended-spec
+  namespace: kube-system
+  labels:
+    f5nr: "true"
+data:
+  extendedSpec: |
+    extendedRouteSpec:
+    - namespace: app
+      vserverAddr: 10.1.10.100
+      vserverName: my-test-cis-vs
+      allowOverride: true

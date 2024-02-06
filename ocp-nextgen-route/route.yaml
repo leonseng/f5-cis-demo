@@ -1,0 +1,15 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  labels:
+    name: httpd
+  name: httpd
+  namespace: app
+spec:
+  host: mysite.f5demo.com
+  path: "/"
+  port:
+    targetPort: 8080
+  to:
+    kind: Service
+    name: httpd
