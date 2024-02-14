@@ -1,0 +1,16 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  labels:
+    name: nginx
+  name: nginx
+  namespace: app
+spec:
+  host: backend.example.com
+  port:
+    targetPort: 8443
+  to:
+    kind: Service
+    name: nginx-service
+  tls:
+    termination: passthrough
